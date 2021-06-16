@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'website/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Welcome|Prikazka.bg</title>
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse d-flex justify-content-center navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{% url 'home' %}">НАЧАЛО</a>
+                <a class="nav-item nav-link" href="{% url 'tales' %}">ПРИКАЗКИ</a>
+                <a class="nav-item nav-link" href="{% url 'authors' %}">ПИСАТЕЛИ</a>
+                <a class="nav-item nav-link" href="{% url 'forum' %}">ФОРУМ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container bg-reading-notsolid text-center mt-1 pt-3">
+        <div class="pb-3">
+            <label class="text-white"><strong>НАЧАЛО</strong></label>
+        </div>
+    </div>
+</div>
+
+<div class="container justify-content-center bg-reading-notsolid text-center mt-1">
+    <div class="text-white pt-3 bg-reading-notsolid border-white mb-5">
+        <h1 class="underlined">ПРИКАЗКИ ЗА ДЕЦА</h1>
+        <h5 class="mt-5 px-5 text-white">Здравейте, драги читатели! Добре дошли в сайта за любими детски приказки.
+            Влезте в невероятния и вълшебен свят на приказките! Желая ви приятно четене!</h5>
+
+        <div class="pb-5 mt-5">
+            <a href="{% url 'tales' %}">
+                <button class="btn btn-lg btn-light text-reading">РАЗГЛЕДАЙТЕ ПРИКАЗКИТЕ</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="col bg-reading-notsolid text-white mb-5 pt-5 border-white">
+        <img class="bd-placeholder-img rounded-circle" height="140px" width="140px"
+             src="{% static 'website/images/az.jpg' %}">
+        <h2>Запознайте се с мен!</h2>
+        <div class="text-white px-3">
+            <strong><p class="px-5 text-white">Здравейте! Казвам се Йоан Иванов и съм на 17 години. Аз съм от Пловдив и
+                уча в МГ
+                "Академик
+                Кирил Попов". Уча програмиране от началото на 2018 година, като разработката на уеб сайтове ми е
+                най-интересна.<br> Обичам да чета и това може би е една от главните причини, поради която създадох
+                този
+                сайт. Още от малък обичах книгите и не можех без тях - те просто ме пренасяха в различен, по-вълшебен
+                свят.<br> Искам да предам моята любов към четенето на децата днес!</p></strong>
+            <p class="px-3">Ако имате някакви въпроси, моля попитайте във форума и аз ще се опитам да ви
+                отговоря по възможно най-бърз начин!</p>
+            <p class="pb-5"><a class="btn btn-light text-reading" href="{% url 'forum' %}" role="button">Форум</a></p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

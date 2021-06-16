@@ -1,0 +1,67 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'website/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Fairy Tales|Prikazka.bg</title>
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse d-flex justify-content-center navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{% url 'home' %}">НАЧАЛО</a>
+                <a class="nav-item nav-link" href="{% url 'tales' %}">ПРИКАЗКИ</a>
+                <a class="nav-item nav-link" href="{% url 'authors' %}">ПИСАТЕЛИ</a>
+                <a class="nav-item nav-link" href="{% url 'forum' %}">ФОРУМ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container bg-reading-notsolid border-white text-center mt-1 pt-3">
+        <div class="pb-3">
+            <label class="text-white"><strong>ФОРУМ</strong></label>
+        </div>
+        <div class="pb-3">
+            <a href="{% url 'create' %}" class="btn bg-reading">
+                <button class="btn-reading text-white">ДОБАВИ КОМЕНТАР</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container bg-reading-notsolid border-white text-justify mt-1 pt-3 ">
+    <div class="row">
+        {% for data in dataset %}
+        <div class="col-12 mt-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="card-body">
+                        <h5 class="card-title text-reading">{{data.name}}</h5>
+                        <small class="text-muted underlined">{{data.date_added}}</small>
+                        <h5 class="h6 text-reading">{{data.subject}}</h5>
+                    </div>
+                    {% if data.comment|length > 99 %}
+                    <div class="card-body">
+                        <h5 class="card-title h6 text-reading">{{data.comment|safe}}</h5>
+                    </div>
+
+                    {% else %}
+                    <div class="card-body">
+                        <h5 class="card-title text-reading">{{data.comment|safe}}</h5>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

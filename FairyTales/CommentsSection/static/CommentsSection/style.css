@@ -1,0 +1,71 @@
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-image: url("images/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.border-primary{
+    border: solid 3px #007bff;
+}
+
+.border-white{
+    border: solid 3px #fff;
+}
+
+.underlined{
+    text-decoration: underline;
+}
+
+.bg-reading-solid{
+    background-color: rgba(185, 135, 205);
+}
+
+.bg-reading-notsolid{
+    background-color: rgba(185, 135, 205, 0.4);
+}
+
+.text-reading{
+    color: rgba(185, 135, 205)!important
+}
+
+a.text-reading:focus,
+a.text-reading:hover{
+    color: rgba(185, 135, 205, .8)!important
+}
+
+.btn-reading{
+    background:#b789cd;
+	background-color:#b789cd;
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size:16px;
+	padding:10px 16px;
+    text-align: center;
+    border-radius: 28px;
+}
+
+.btn-reading:hover{
+    background: rgba(185, 135, 205, .8);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-reading:active{
+    background:#b789cd;
+	background-color:#b789cd;
+	color:#fff;
+}
+
+.fs-27{
+    font-size: 27px;
+}
+
+.fs-authors-text{
+    font-size: 20px;
+}
